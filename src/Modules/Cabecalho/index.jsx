@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import Logo from "./imagens/logo.png"
+import { Link } from "react-router-dom";
+import CabecalhoLink from "../CabecalhoLink";
 
 
 const HeaderEstilizado = styled.header`
@@ -9,35 +11,35 @@ const HeaderEstilizado = styled.header`
   color: #fff;
   padding: 20px 0;
 
+
+  nav{
+    display: flex;
+    align-items: center;
+  }
+
   ul{
     list-style: none;
     display: flex;
     align-items: center;
     gap: 4em;
-    
-    li{
-        
-        a{
-            text-decoration: none;
-            color: #fff;
-            font-size: 18px;
-        }
-    }
   }
 `
 
 const Cabecalho = () => {
     return (
         <HeaderEstilizado>
-            <img src={Logo} alt="Logo Cinetag"/>
-            <ul>
-                <li>
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="#">Favoritos</a>
-                </li>
-            </ul>
+            <Link to='./'>
+                <img src={Logo} alt="Logo Cinetag" />
+            </Link>
+
+            <nav>
+                <ul>
+                    <CabecalhoLink path='./'>Home</CabecalhoLink>
+                    <CabecalhoLink path='./favoritos'>Favoritos</CabecalhoLink>
+                </ul>
+            </nav>
+
+
         </HeaderEstilizado>
     )
 }
