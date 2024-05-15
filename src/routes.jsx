@@ -4,6 +4,7 @@ import Favoritos from "./pages/Favoritos/index.jsx";
 import Inicio from "./pages/Inicio/index.jsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+
 function AppRoutes(){
     return (
         <BrowserRouter>
