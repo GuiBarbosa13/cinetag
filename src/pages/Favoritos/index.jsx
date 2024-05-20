@@ -1,6 +1,12 @@
+import Banner from "../../Modules/Banner";
+import Titulo from "../../Modules/Titulo";
+
 const Favoritos = () => {
     return (
-        <h1>BEM-VINDO À PÁGINA DE FAVORITOS</h1>
+        <>
+            <Banner imagem="favoritos"/>
+            <Titulo>Meus Favoritos</Titulo>
+        </>
     )
 };
 

@@ -3,26 +3,29 @@ import favoritar from './favoritar.png'
 
 const ContainerCard = styled.div`
     background-color: #E2E2E2;
-    width: 202px;
+    width: 282px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0 0 1em 0;
-    margin-top: .5em;
+    margin-bottom: 1.5em;
+
+    img{
+        width: 100%;
+    }
 
     h2{
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         font-size: 18px;
         text-align: center;
-        padding: 1em 0;
+        padding: 16px 27px;
     }
 
     button{
         background-color: transparent;
         border: none;
         padding: 0;
-        padding: 1em 0;
+        margin: 0 0 16px 27px;
         width: 25px;
     }
     
