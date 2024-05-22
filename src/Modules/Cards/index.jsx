@@ -28,12 +28,10 @@ const ContainerCard = styled.div`
         margin: 0 0 16px 27px;
         width: 25px;
     }
-    
-
 `
 
 
-const Cards = ({ capa, titulo }) => {
+const Cards = ({ capa, titulo, id, link }) => {
     return (
         <ContainerCard>
             <img src={capa} alt={titulo} />

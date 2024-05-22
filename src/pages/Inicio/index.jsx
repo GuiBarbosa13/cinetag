@@ -6,8 +6,7 @@ import styled from "styled-components";
 
 const ContainerCards = styled.div`
     display: flex;
-    gap: 24px;
-    justify-content: center;
+    justify-content: space-between;
 `
 
 const Inicio = () =>{
@@ -18,7 +17,7 @@ const Inicio = () =>{
         <Banner imagem={"home"}/>
         <Titulo><h1>Um lugar para guardar seus vídeos e filmes!</h1></Titulo>
         <ContainerCards>
-            {ConteudoCards.map(conteudo => <Cards capa={conteudo.capa} titulo={conteudo.titulo} key={conteudo.id}/>)}
+            {ConteudoCards.map(conteudo => <Cards link={conteudo.link} id={conteudo.id} capa={conteudo.capa} titulo={conteudo.titulo} key={conteudo.id}/>)}
         </ContainerCards>
         
         </>
