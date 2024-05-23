@@ -1,5 +1,9 @@
-import styled from 'styled-components';
 import favoritar from './favoritar.png'
+import { useFavoritoContext } from '../../contextos/Favoritos';
+import desfavoritar from './desfavoritar.png';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import styles from './cards.module.css';
 
 const ContainerCard = styled.div`
     background-color: #E2E2E2;
@@ -17,7 +21,6 @@ const ContainerCard = styled.div`
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         font-size: 18px;
-        text-align: center;
         padding: 16px 27px;
     }
 
@@ -27,17 +30,25 @@ const ContainerCard = styled.div`
         padding: 0;
         margin: 0 0 16px 27px;
         width: 25px;
+        cursor: pointer;
     }
 `
-
-
 const Cards = ({ capa, titulo, id, link }) => {
+
+    const { favorito, adicionarFavorito } = useFavoritoContext();
+    const eFavorito = favorito.some(fav => fav.id === id);
+
+    const icone = !eFavorito ? favoritar : desfavoritar;
+
     return (
         <ContainerCard>
-            <img src={capa} alt={titulo} />
-            <h2>{titulo}</h2>
-            <button>
-                <img src={favoritar} alt="ícone favoritar" />
+            <Link to={`/${id}`} className={styles.link}>
+                <img src={capa} alt={titulo} />
+                <h2>{titulo}</h2>
+            </Link>
+
+            <button onClick={() => adicionarFavorito({ id, titulo, capa })}>
+                <img src={icone} alt="ícone favoritar" />
             </button>
         </ContainerCard>
     )
