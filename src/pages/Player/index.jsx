@@ -3,10 +3,13 @@ import Banner from "../../Modules/Banner"
 import Container from "../../Modules/Container"
 import Titulo from "../../Modules/Titulo"
 import videos from "../../json/db.json"
+import NaoEncontrado from "../NaoEncontrado"
 
 const Player = () => {
     const parametros = useParams();
     const video = videos.find(video => video.id === Number(parametros.id));
+
+    if(!video){return <NaoEncontrado/>}
 
     return(
         <>
